@@ -1,0 +1,98 @@
+/* 検索画面全体のコンテナ */
+.search-container {
+  width: 100%;
+  height: 100%;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* 検索バーとカードリストの間の隙間 */
+}
+
+/* 1. 検索バーのスタイル */
+.search-bar-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 400px;
+  height: 50px;
+  border: 1px solid #999999; /* 細めの枠線 */
+  border-radius: 25px;       /* 綺麗な長丸 */
+  padding: 0 20px;
+  font-size: 1rem;
+  outline: none;
+  background-color: transparent;
+  color: #333333;
+  box-sizing: border-box;
+}
+
+/* 2. カードリストの並び（縦並び） */
+.card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px; /* カード同士の隙間 */
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* ★デザインのキモ：斜めカットの天気カード */
+.weather-card {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  background-color: #d3d3d3; /* 仮のグレー背景 */
+  
+  /* 左上(0 0)から始まり、右上(100% 15%)で少し下げて斜めにカット */
+  clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 100%);
+  
+  border-radius: 24px; /* 角丸にする（※clip-pathを使うと丸みが削れる場合があるため、親要素側で調整） */
+  padding: 30px 20px 20px 20px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end; /* テキストを下揃えに */
+}
+
+/* カード内の左側テキスト */
+.card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 2; /* テキストが画像の下に隠れないように */
+}
+
+.card-temp {
+  font-size: 3.5rem;
+  font-weight: 200;
+  color: #ffffff; /* デザイン通り白文字に */
+  line-height: 1;
+}
+
+.card-location {
+  font-size: 1.1rem;
+  color: #ffffff;
+  font-weight: 300;
+}
+
+/* 右側の大きな画像を配置する枠 */
+.card-image-wrapper {
+  position: absolute;
+  top: -15px;   /* 上側にはみ出させる */
+  right: -10px;  /* 右側にも少しはみ出させる */
+  width: 160px;
+  height: 160px;
+  z-index: 1;   /* 背景よりは上に、テキストよりは下に */
+}
+
+/* お天気画像自体のサイズ */
+.card-weather-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
