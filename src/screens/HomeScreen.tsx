@@ -63,7 +63,7 @@ function HomeScreen() {
           
           // 現在の時間に近いインデックスから3つ分（3時間、6時間、9時間後など）を取得
           for (let i = 0; i < 3; i++) {
-            const index = (i + 1) * 1; // 1時間おき
+            const index = (i + 1) * 2; // 2時間おき
             const timeStr = new Date(rawHourly.time[index]).toLocaleTimeString('ja-JP', { hour: '2-digit', minute: '2-digit' });
             const tempStr = `${Math.round(rawHourly.temperature_2m[index])}°`;
             const weatherCode = rawHourly.weathercode[index];
