@@ -113,7 +113,6 @@ function SearchScreen() {
               <span className="card-temp">{card.temp}</span>
               <span className="card-location">{card.location}</span>
             </div>
-            
             {/* 右側の大きなお天気画像 */}
             <div className="card-image-wrapper">
               <img src={card.img} alt={card.alt} className="card-weather-image" />

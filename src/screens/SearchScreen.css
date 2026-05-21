@@ -83,8 +83,8 @@
 /* 右側の大きな画像を配置する枠 */
 .card-image-wrapper {
   position: absolute;
-  top: -15px;   /* 上側にはみ出させる */
-  right: -10px;  /* 右側にも少しはみ出させる */
+  top: 5px;   /* 上側にはみ出させる */
+  right: 15px;  /* 右側にも少しはみ出させる */
   width: 160px;
   height: 160px;
   z-index: 1;   /* 背景よりは上に、テキストよりは下に */
